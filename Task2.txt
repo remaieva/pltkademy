@@ -1,0 +1,5 @@
+#!/bin/bash
+for fNum in {1..10}
+  do 
+    head -c1000 /dev/urandom > ./random_text_$fNum.txt
+  done
