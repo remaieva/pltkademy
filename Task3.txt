@@ -1,8 +1,9 @@
 #!/bin/bash
-echo "Hostname:" >> ./SysInfo.txt; cat /proc/sys/kernel/hostname >> ./SysInfo.txt
+echo "Hostname:" >> ./SysInfo.txt
+cat /proc/sys/kernel/hostname >> ./SysInfo.txt
 echo "Number of CPU cores:" >> ./SysInfo.txt
 cat /proc/cpuinfo | grep processor | wc -l >>  ./SysInfo.txt
 echo "Total memory:" >> ./SysInfo.txt
 cat /proc/meminfo | grep MemTotal | awk {'print $2'} >> ./SysInfo.txt
 echo "Total disk space:" >> ./SysInfo.txt
-df -h / | head -2 | awk {'print $2'} >> ./SysInfo.txt
+df -h / | awk {'print $2'} >> ./SysInfo.txt
